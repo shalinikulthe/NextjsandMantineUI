@@ -10,38 +10,38 @@ const [isLoading, setIsLoading] = useState(true);
 const [error, setError] = useState(null);
 
 const headers = [
-  { key: "id", value: "ID" },
-  { key: "name", value: "Name" },
-  { key: "username", value: "Username" },
-  { key: "email", value: "Email" },
-  {
-    key: "address",
-    value: "Address",
-    component: (addList) =>
-      `${addList.street}, ${addList.suite}, ${addList.city}, ${addList.zipcode}`,
-  },
-  {
-    key: "id",
-    value: "Action",
-    component: (user) => (
-      <Link href={`/pages/${user}`}>
-        <Button variant="default">Show</Button>
-      </Link>
-    ),
-  },
+{ key: "id", value: "ID" },
+{ key: "name", value: "Name" },
+{ key: "username", value: "Username" },
+{ key: "email", value: "Email" },
+{
+  key: "address",
+  value: "Address",
+  component: (addList) =>
+    `${addList.street}, ${addList.suite}, ${addList.city}, ${addList.zipcode}`,
+},
+{
+  key: "id",
+  value: "Action",
+  component: (user) => (
+    <Link href={`/pages/${user}`}>
+      <Button variant="default">Show</Button>
+    </Link>
+  ),
+},
 ];
 
 useEffect(() => {
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.json())
-    .then((data) => {
-      setData(data);
-      setIsLoading(false);
-    })
-    .catch(() => {
-      setError("Error fetching data");
-      setIsLoading(false);
-    });
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) => {
+    setData(data);
+    setIsLoading(false);
+  })
+  .catch(() => {
+    setError("Error fetching data");
+    setIsLoading(false);
+  });
 }, []);
 
 if (isLoading) return <div>Loading...</div>;

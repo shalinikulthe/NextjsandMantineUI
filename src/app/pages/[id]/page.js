@@ -1,11 +1,8 @@
-
-'use client'
+'use client';
 import React, { useState, useEffect } from "react";
 
-const ViewDetails = ({params}) => {
-// console.log(params.id,"dsadkjsdkjsa")
-
-const id= React.use(params).id
+const ViewDetails = ({ params }) => {
+const id = React.use(params).id;
 const [details, setDetails] = useState(null);
 
 useEffect(() => {
@@ -18,30 +15,66 @@ useEffect(() => {
   fetchDetails();
 }, [id]);
 
+const cardStyle = {
+
+  borderRadius: "8px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  padding: "50px",
+  width: "80%",
+  maxWidth: "600px",
+  margin: "20px auto",
+  fontFamily: "Arial, sans-serif",
+};
+
+const headingStyle = {
+  textAlign: "center",
+  fontWeight: "bold",
+  fontSize: "24px",
+  marginBottom: "20px",
+  color: "#2c3e50", 
+};
+
+const paragraphStyle = {
+  fontSize: "16px",
+  lineHeight: "1.6",
+  
+};
+
+const boldTextStyle = {
+  fontWeight: "bold",
+  
+};
+
+const wrapperStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh", 
+  margin: 0, 
+  backgroundColor: '#d0d0f8'
+};
+
 return (
-  <div className="details-container">
-    {details ? (
-      <>
-      <h3 style={{ textAlign: "center", fontWeight: "bold", fontSize: "24px" }}>Details</h3>
-
-
-
-        <p><strong>Name:</strong> {details.name}<br/>
-        <strong>Username:</strong> {details.username}<br/>
-        <strong>Email:</strong> {details.email}<br/>
-        </p>
-        <p>
-  <strong>Address:</strong> {details.address.street}, {details.address.suite}, {details.address.city}, 
-  {details.address.zipcode}, <strong>Lat:</strong> {details.address.geo.lat}, <strong>Lng:</strong> {details.address.geo.lng}
-</p>
-
-
-
-      
-      </>
-    ) : (
-      <p>Loading...</p>
-    )}
+  <div style={wrapperStyle}>
+    <div className="details-container" style={cardStyle}>
+      {details ? (
+        <>
+          <h3 style={headingStyle}>Details</h3>
+          <p style={paragraphStyle}>
+            <span style={boldTextStyle}>Name:</span> {details.name}<br/>
+            <span style={boldTextStyle}>Username:</span> {details.username}<br/>
+            <span style={boldTextStyle}>Email:</span> {details.email}<br/>
+          </p>
+          <p style={paragraphStyle}>
+            <span style={boldTextStyle}>Address:</span> {details.address.street}, {details.address.suite}, {details.address.city}, 
+            {details.address.zipcode}, <br/><span style={boldTextStyle}>Lat:</span> {details.address.geo.lat}, 
+            <span style={boldTextStyle}>Lng:</span> {details.address.geo.lng}
+          </p>
+        </>
+      ) : (
+        <p style={{ color: "#95a5a6" }}>Loading...</p> 
+      )}
+    </div>
   </div>
 );
 };

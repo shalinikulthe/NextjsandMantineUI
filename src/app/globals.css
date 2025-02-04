@@ -3,20 +3,95 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+--background: #ffffff;
+--foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+color: var(--foreground);
+background: var(--background);
+font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+width: 100%;
+border-spacing: 0;
+border: 1px solid #ddd;
+font-size: 13px;
+font-family: 'Roboto', sans-serif;
+border-radius: 8px;
+overflow: hidden;
+}
+.details-container{
+background-color: #e3e3f7;
+text-align:justify
+}
+
+thead th {
+background-color: #d0d0f8;
+color: #39398f;
+padding: 12px;
+text-align: center;
+font-weight: bold;
+border-bottom: 1px solid #ddd;
+font-size: 15px;
+}
+
+tbody tr {
+border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+background-color: #e6e6fa;
+}
+
+tbody tr:nth-child(odd) {
+background-color: #ffffff;
+}
+
+tbody tr:hover {
+cursor: pointer;
+}
+
+td {
+padding: 10px;
+text-align: left;
+}
+
+button {
+padding: 12px 16px;
+background-color: #8e8ef3;
+color: white;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-decoration: none;
+}
+
+button:hover {
+background-color: #380848;
+}
+
+@media (max-width: 768px) {
+.table-container {
+  padding: 10px;
+}
+
+table {
+  font-size: 16px;
+}
+
+button {
+  padding: 6px 10px;
+  font-size: 12px;
+  text-decoration: none;
+}
+}
