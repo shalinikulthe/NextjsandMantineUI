@@ -3,6 +3,8 @@ import "./globals.css";
 import { MantineProvider } from "@mantine/core";
 import '@mantine/core/styles.css';
 
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,6 +31,8 @@ export default function RootLayout({ children }) {
           withGlobalStyles
           withNormalizeCSS
         >
+          
+        
           {children}
         </MantineProvider>
       </body>
