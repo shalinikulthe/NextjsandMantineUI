@@ -28,6 +28,7 @@ return (
     >
 <MantineProvider
         theme={{ colorScheme: "light" }} 
+        
         withGlobalStyles
         withNormalizeCSS
       >
