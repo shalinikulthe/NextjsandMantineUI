@@ -27,7 +27,7 @@ return (
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
 <MantineProvider
-        theme={{ colorScheme: "light" }} // Change to 'dark' if needed
+        theme={{ colorScheme: "light" }} 
         withGlobalStyles
         withNormalizeCSS
       >
